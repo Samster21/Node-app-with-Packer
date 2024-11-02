@@ -12,6 +12,6 @@ Variables Required:
         ii) base_ami_name: The address for the base ami
         iii} ami_ssh_username: AS the name describes, the username to be used to ssh into the instance.
 
-        The below variable is important, and so please review it before proceeding with building.
+        The below variable is important, and so please review it before proceeding with image-building.
 
         iv) build_instance_type: Declares the type and size of instance that is used to build the image. I have set t3.medium as a default, but discretion is advised as costs will be incurred.
