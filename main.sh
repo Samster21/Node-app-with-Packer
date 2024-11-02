@@ -57,7 +57,7 @@ if [ "$ACTION_FLAG" = true ]; then
         exit 1
     else
         INSTANCE_IP=$(terraform output -raw public_ip)
-    fi
+    fi  
 fi
 
 if [ "$DESTROY_FLAG" = true ]; then
