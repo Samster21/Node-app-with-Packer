@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 WorkingDirectory=/home/ubuntu/AWS-Session
-ExecStart=/usr/bin/npm run start  # Uses npm to start the application as specified in your package.json
+ExecStart=/usr/bin/npm run start  # Uses npm to start the application as specified in the package.json file.
 Restart=always
 User=ubuntu
 Environment=DOMAIN=http://localhost:3000
