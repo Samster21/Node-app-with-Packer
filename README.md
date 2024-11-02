@@ -14,4 +14,4 @@ Variables Required:
 
         The below variable is important, and so please review it before proceeding with image-building.
 
-        iv) build_instance_type: Declares the type and size of instance that is used to build the image. I have set t3.medium as a default, but discretion is advised as costs will be incurred.
+        iv) build_instance_type: Declares the type and size of instance that is used to build the image (Source AWS Instance). I have set t3.medium as a default, but discretion is advised as costs will be incurred.

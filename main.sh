@@ -8,10 +8,11 @@ set -e
 
 LOG_FILE="error_logs.txt"
 touch "$LOG_FILE"
+user=$(whoami)
 
 
 log_error(){
-    echo  "$(date '+%Y-%m-%d %H:%M:%S') - ERROR: $1\n" >> "$LOG_FILE"
+    echo  "$(date '+%Y-%m-%d %H:%M:%S') - USER: $user ERROR: $1\n" >> "../$LOG_FILE"
 }
 
 while getopts "pad" flag; do
@@ -29,6 +30,7 @@ if [ "$ACTION_FLAG" = true ] && [ "$DESTROY_FLAG" = true ]; then
 fi
 
 if [ "$PACKER_FLAG" = true ]; then
+    cd packer_configs
     if ! packer init . ; then
         log_error "Packer init failed"
         exit 1
@@ -39,9 +41,11 @@ if [ "$PACKER_FLAG" = true ]; then
         log_error "Packer build failed!"
         exit 1
     fi
+    cd ..
 fi
 
 if [ "$ACTION_FLAG" = true ]; then
+    cd terraform_configs
     if ! terraform init  ; then
         log_error "Terraform init failed"
         exit 1
@@ -57,7 +61,6 @@ if [ "$ACTION_FLAG" = true ]; then
 fi
 
 if [ "$DESTROY_FLAG" = true ]; then
+    cd terraform_configs
     terraform destroy -auto-approve
 fi
-
-     
