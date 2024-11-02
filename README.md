@@ -3,8 +3,8 @@
 Variables Required:
 
 1. Terraform : 
-        i) account_id: The Account ID of the owner of the image.
-        ii) key_name: Name of the keypair to be used to create the instance (ensure that you already have created a keypair prior to this via on AWS.)
+i) account_id: The Account ID of the owner of the image.
+ii) key_name: Name of the keypair to be used to create the instance (ensure that you already have created a keypair prior to this via on AWS.)
 
 2. Packer:
 You can leave the following three to be defaults if you want Ubuntu Jammy as base image.
